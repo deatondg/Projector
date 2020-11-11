@@ -1,0 +1,48 @@
+# https://help.github.com/en/github/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions#jobsjob_idname
+name: Package
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build (macOS)
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        xcode: ["11.3", "11.3.1", "11.4"]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Select Xcode ${{ matrix.xcode }}
+        run: sudo xcode-select -switch /Applications/Xcode_${{ matrix.xcode }}.app
+      - name: Build
+        run: swift build -c release
+  build-linux:
+    name: Build (Linux)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build
+        run: swift build -c release
+  test:
+    name: Test (macOS)
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        xcode: ["11.3", "11.3.1", "11.4", "12.0.1"]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Select Xcode ${{ matrix.xcode }}
+        run: sudo xcode-select -switch /Applications/Xcode_${{ matrix.xcode }}.app
+      - name: Generate project
+        run: swift package generate-xcodeproj
+      - name: Run tests
+        run: xcodebuild test -project XcodeProj.xcodeproj -scheme XcodeProj-Package -enableCodeCoverage YES
+      - name: Send test coverage report
+        run: bash <(curl -s https://codecov.io/bash)
+  test-linux:
+    name: Test (Linux)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build and run tests
+        run: swift test --enable-test-discovery
