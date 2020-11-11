@@ -14,7 +14,7 @@ let package = Package(
     targets: [
         .target(name: "Projector",
                 dependencies: [
-                    "PathKit",
+                    "FastPathKit",
                     "AEXML",
                 ]),
         .testTarget(name: "ProjectorTests", dependencies: ["Projector"]),
