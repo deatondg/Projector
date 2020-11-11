@@ -1,22 +1,22 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.3
 
 import PackageDescription
 
 let package = Package(
-    name: "XcodeProj",
+    name: "Projector",
     products: [
-        .library(name: "XcodeProj", targets: ["XcodeProj"]),
+        .library(name: "Projector", targets: ["Projector"]),
     ],
     dependencies: [
         .package(url: "https://github.com/tadija/AEXML", .upToNextMinor(from: "4.5.0")),
-        .package(url: "https://github.com/kylef/PathKit", .upToNextMinor(from: "1.0.0")),
+        .package(name: "FastPathKit", url: "https://github.com/deatondg/PathKit", .branch("master")),
     ],
     targets: [
-        .target(name: "XcodeProj",
+        .target(name: "Projector",
                 dependencies: [
                     "PathKit",
                     "AEXML",
                 ]),
-        .testTarget(name: "XcodeProjTests", dependencies: ["XcodeProj"]),
+        .testTarget(name: "ProjectorTests", dependencies: ["Projector"]),
     ]
 )
