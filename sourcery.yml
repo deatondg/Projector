@@ -1,6 +1,6 @@
 sources:
   - Sources/
 templates:
-  - templates
+  - Templates
 output:
-  Sources/XcodeProj/Objects/Sourcery
+  Sources/Projector/Generated
