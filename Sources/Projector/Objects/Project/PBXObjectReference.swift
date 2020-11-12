@@ -1,5 +1,6 @@
 import Foundation
 
+/*
 /// Object used as a reference to PBXObjects from PBXObjects.
 class PBXObjectReference: NSObject, Comparable, NSCopying {
     /// Boolean that indicates whether the id is temporary and needs
@@ -152,3 +153,4 @@ extension Array where Element: PBXObjectReference {
         compactMap { $0.getObject() }
     }
 }
+*/

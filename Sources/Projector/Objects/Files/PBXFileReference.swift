@@ -1,6 +1,7 @@
 import Foundation
-import PathKit
+import FastPathKit
 
+/*
 ///  A PBXFileReference is used to track every external file referenced by
 ///  the project: source files, resource files, libraries, generated application files, and so on.
 public final class PBXFileReference: PBXFileElement {
@@ -140,3 +141,4 @@ public final class PBXFileReference: PBXFileElement {
         return isEqual(to: rhs)
     }
 }
+*/

@@ -1,6 +1,7 @@
 import Foundation
-import PathKit
+import FastPathKit
 
+/*
 public class PBXGroup: PBXFileElement {
     // MARK: - Attributes
 
@@ -233,3 +234,4 @@ public extension PBXGroup {
         return fileReference
     }
 }
+*/

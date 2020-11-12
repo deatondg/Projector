@@ -1,8 +1,13 @@
-// sourcery:file: skipEquality
 import Foundation
 
-/// Class that represents a project element.
-public class PBXObject: Hashable, Decodable, Equatable, AutoEquatable {
+/// A protocol representing any project element.
+/// This is highly entangled with sourcery.
+public protocol PBXObject: Hashable {
+    
+}
+
+/*
+public class PBXObject: Decodable {
     /// Returns the unique identifier.
     /// Note: The unique identifier of an object might change when the project gets written.
     /// If you use this identifier from a scheme, make sure the project is written before the project is.
@@ -80,3 +85,4 @@ public class PBXObject: Hashable, Decodable, Equatable, AutoEquatable {
         return objects
     }
 }
+*/

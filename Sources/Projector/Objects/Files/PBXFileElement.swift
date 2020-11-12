@@ -1,8 +1,10 @@
 import Foundation
-import PathKit
-
-/// This element is an abstract parent for file and group elements.
-public class PBXFileElement: PBXContainerItem, PlistSerializable {
+import FastPathKit
+/*
+/// A struct describing file and group elements.
+public protocol PBXFileElement {
+    
+    
     // MARK: - Attributes
 
     /// Element source tree.
@@ -31,7 +33,10 @@ public class PBXFileElement: PBXContainerItem, PlistSerializable {
 
     /// Element parent.
     public weak var parent: PBXFileElement?
+}
 
+/*
+public class PBXFileElement: PBXContainerItem, PlistSerializable {
     // MARK: - Init
 
     /// Initializes the file element with its properties.
@@ -208,3 +213,5 @@ public extension PBXFileElement {
         }
     }
 }
+*/
+*/

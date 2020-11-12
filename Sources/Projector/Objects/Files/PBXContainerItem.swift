@@ -1,17 +1,14 @@
 import Foundation
 
 /// Class representing an element that may contain other elements.
-public class PBXContainerItem: PBXObject {
+public struct PBXContainerItem: PBXObject {
     /// User comments for the object.
-    var comments: String?
+    public var comments: String?
+}
 
-    // MARK: - Init
 
-    init(comments: String? = nil) {
-        self.comments = comments
-        super.init()
-    }
-
+/*
+public class PBXContainerItem {
     // MARK: - Decodable
 
     fileprivate enum CodingKeys: String, CodingKey {
@@ -31,9 +28,5 @@ public class PBXContainerItem: PBXObject {
         }
         return dictionary
     }
-
-    override func isEqual(to object: Any?) -> Bool {
-        guard let rhs = object as? PBXContainerItem else { return false }
-        return isEqual(to: rhs)
-    }
 }
+*/

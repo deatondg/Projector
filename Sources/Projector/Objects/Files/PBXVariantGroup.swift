@@ -1,5 +1,6 @@
 import Foundation
 
+/*
 // This is the element for referencing localized resources.
 public final class PBXVariantGroup: PBXGroup {
     override func isEqual(to object: Any?) -> Bool {
@@ -7,3 +8,4 @@ public final class PBXVariantGroup: PBXGroup {
         return isEqual(to: rhs)
     }
 }
+*/

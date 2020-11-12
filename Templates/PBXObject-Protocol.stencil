@@ -1,0 +1,10 @@
+import Foundation
+
+{% for type in types.types|struct where type.implements.PBXObject %}
+public protocol {{ type.name }}Protocol: PBXObject {
+    {% for variable in type.storedVariables %}
+    var {{ variable.name }}: {{ variable.typeName }} { get set }
+    {% endfor %}
+}
+extension {{ type.name }}: {{ type.name }}Protocol {}
+{% endfor %}

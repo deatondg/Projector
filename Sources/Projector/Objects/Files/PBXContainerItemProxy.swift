@@ -1,5 +1,6 @@
 import Foundation
 
+/*
 /// This is the element to decorate a target item.
 public final class PBXContainerItemProxy: PBXObject {
     public enum ProxyType: UInt, Decodable {
@@ -203,3 +204,4 @@ private extension PBXContainerItemProxy.ContainerPortal {
         }
     }
 }
+*/
